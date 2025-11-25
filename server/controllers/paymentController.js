@@ -70,7 +70,7 @@ const receivePayment = async (req, res) => {
                 upiApp: 'Paytm',
                 upiId
             },
-            callback_url: 'http://localhost:8080/api/payments/callback',
+            callback_url: callback_url: process.env.PAYMENT_CALLBACK_URL,
             callback_method: 'get'
         }, {
             headers: {
