@@ -11,6 +11,7 @@ const RegisterPatient = () => {
     age: "",
     gender: "",
   });
+
   const [registrationMessage, setRegistrationMessage] = useState("");
   const navigate = useNavigate();
 
@@ -45,14 +46,11 @@ const RegisterPatient = () => {
     }
 
     try {
-      // Use environment variable for backend URL
       const response = await fetch(
         `${process.env.REACT_APP_API_BASE_URL}/api/register-patient`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         }
       );
