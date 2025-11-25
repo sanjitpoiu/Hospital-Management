@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
@@ -70,7 +68,7 @@ const receivePayment = async (req, res) => {
                 upiApp: 'Paytm',
                 upiId
             },
-            callback_url: callback_url: process.env.PAYMENT_CALLBACK_URL,
+            callback_url: process.env.PAYMENT_CALLBACK_URL,
             callback_method: 'get'
         }, {
             headers: {
