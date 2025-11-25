@@ -3,13 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const path = require('path');
 
-// Import routes
+// Import Routes
 const doctorRoutes = require('./routes/doctors');
-const doctorAuthRoutes = require('./routes/doctorauth');
+const doctorAuthRoutes = require('./routes/doctorAuthRoutes');
 const patientRoutes = require('./routes/patients');
-const patientAuthRoutes = require('./routes/patientAuth');
+const patientAuthRoutes = require('./routes/patientAuthRoutes');
 const otpRoutes = require('./routes/otp');
 const appointmentRoutes = require('./routes/appointments');
 const patientForgetPasswordRoutes = require('./routes/patientForgetPassword');
@@ -19,18 +18,14 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-
-// CORS configuration
 app.use(cors({
-    origin: 'https://hospital-management-frontend-9wt2.onrender.com', // Replace with your frontend URL
+    origin: 'https://hospital-management-frontend-9wt2.onrender.com', // Your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
-
-// Handle preflight requests
 app.options('*', cors());
 
-// Mount routes
+// Routes
 app.use('/api', doctorRoutes);
 app.use('/api', doctorAuthRoutes);
 app.use('/api', patientRoutes);
@@ -46,18 +41,13 @@ const PORT = process.env.PORT || 8080;
 
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 })
 .then(() => console.log('MongoDB connected successfully'))
 .catch((error) => console.error('MongoDB connection error:', error.message));
 
-// Optional: serve frontend if needed
-// app.use(express.static(path.join(__dirname, '../frontend/build')));
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-// });
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on port: ${PORT}`);
+app.get('/', (req, res) => {
+    res.send('Hospital Management Backend is running.');
 });
+
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
