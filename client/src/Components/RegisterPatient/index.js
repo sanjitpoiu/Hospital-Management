@@ -12,12 +12,12 @@ const RegisterPatient = () => {
     gender: "",
   });
 
-  const [registrationMessage, setRegistrationMessage] = useState("");
+  const [message, setMessage] = useState({ type: "", text: "" });
   const navigate = useNavigate();
 
   // Handle input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
   };
 
   // Password validation function
@@ -31,17 +31,19 @@ const RegisterPatient = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check password confirmation
+    // Password confirmation check
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
+      setMessage({ type: "error", text: "Passwords do not match" });
       return;
     }
 
-    // Check password strength
+    // Password strength check
     if (!isStrongPassword(formData.password)) {
-      alert(
-        "Password must be at least 8 characters long and include uppercase, lowercase, and a number"
-      );
+      setMessage({
+        type: "error",
+        text:
+          "Password must be at least 8 characters long and include uppercase, lowercase, and a number",
+      });
       return;
     }
 
@@ -64,23 +66,36 @@ const RegisterPatient = () => {
       }
 
       if (response.ok) {
-        alert("Registration successful");
-        navigate("/patient-login");
+        setMessage({ type: "success", text: "Registration successful!" });
+        setTimeout(() => navigate("/patient-login"), 1500);
       } else {
-        alert(`Registration failed: ${data.message}`);
+        setMessage({ type: "error", text: data.message });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Something went wrong. Please try again later.");
+      setMessage({
+        type: "error",
+        text: "Something went wrong. Please try again later.",
+      });
     }
   };
 
   return (
     <div className={styles.registerContainer}>
       <h2 className={styles.title}>Register as Patient</h2>
-      {registrationMessage && (
-        <div className={styles.successMessage}>{registrationMessage}</div>
+
+      {message.text && (
+        <div
+          className={
+            message.type === "success"
+              ? styles.successMessage
+              : styles.errorMessage
+          }
+        >
+          {message.text}
+        </div>
       )}
+
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
@@ -91,6 +106,7 @@ const RegisterPatient = () => {
           className={styles.input}
           required
         />
+
         <input
           type="email"
           name="email"
@@ -100,6 +116,7 @@ const RegisterPatient = () => {
           className={styles.input}
           required
         />
+
         <input
           type="password"
           name="password"
@@ -111,12 +128,14 @@ const RegisterPatient = () => {
           }`}
           required
         />
-        {!isStrongPassword(formData.password) && (
+
+        {!isStrongPassword(formData.password) && formData.password && (
           <div className={styles.passwordHint}>
             Password must be at least 8 characters and include uppercase,
             lowercase, and number.
           </div>
         )}
+
         <input
           type="password"
           name="confirmPassword"
@@ -126,6 +145,7 @@ const RegisterPatient = () => {
           className={styles.input}
           required
         />
+
         <input
           type="number"
           name="age"
@@ -135,6 +155,7 @@ const RegisterPatient = () => {
           className={styles.input}
           required
         />
+
         <select
           name="gender"
           value={formData.gender}
@@ -147,6 +168,7 @@ const RegisterPatient = () => {
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
+
         <button type="submit" className={styles.registerBtn}>
           Register
         </button>
