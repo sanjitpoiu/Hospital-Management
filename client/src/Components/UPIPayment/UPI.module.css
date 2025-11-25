@@ -1,0 +1,98 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-image: url('../../assets/photo12.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #fff;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #eee;
+}
+
+.select,
+.input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+.input {
+  height: 40px; /* Adjust input height for consistency */
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-right: 10px; /* Space between buttons */
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.qrCodeContainer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.qrCodeContainer h2 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.qrCodeLink {
+  display: block;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+@media print {
+  .qrCodeContainer * {
+    visibility: hidden;
+  }
+  .qrCodeContainer,
+  .qrCodeContainer * {
+    visibility: visible;
+  }
+  .qrCodeContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

@@ -1,0 +1,117 @@
+
+
+.homeContainer {
+  text-align: center;
+}
+
+.heroSection {
+  background: url('../../assets/photot3.jpg') ;
+
+  background-size: 100%;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.heroContent {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.heroSection h1 {
+  font-size: 3rem;
+  margin: 0 0 20px;
+}
+
+.heroSection p {
+  font-size: 1.5rem;
+  margin: 0 0 30px;
+}
+
+.ctaButton {
+  background-color: #ff7f50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: #ff6347;
+}
+
+.servicesSection {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.servicesSection h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.servicesGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.serviceCard {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.serviceCard p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.aboutSection {
+  padding: 50px 20px;
+}
+
+.aboutSection h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.aboutSection p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.contactSection {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.contactSection h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contactSection p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

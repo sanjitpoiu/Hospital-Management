@@ -1,0 +1,42 @@
+/* Contact.module.css */
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px;
+    background: url('../../assets/photo5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+  }
+  
+  .contactTitle {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .contactContent {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

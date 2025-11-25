@@ -1,0 +1,77 @@
+.dashboardContainer {
+  background: url('../../assets/photo.jpg') no-repeat center center fixed;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); /* Add blur effect */
+}
+
+.dashboardHeader {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.viewButton,
+.deleteButton,
+.backButton {
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.viewButton:hover,
+.deleteButton:hover,
+.backButton:hover {
+  background-color: #f4a285;
+}
+
+.appointmentList,
+.appointmentDetails {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.appointmentList h2,
+.appointmentDetails h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.appointmentList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.appointmentItem {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.appointmentDetails p {
+  margin-bottom: 5px;
+}
+

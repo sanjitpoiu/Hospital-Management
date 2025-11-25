@@ -1,0 +1,33 @@
+/* NotFound.module.css */
+.notFoundContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .notFoundContent {
+    text-align: center;
+  }
+  
+  .notFoundTitle {
+    font-size: 3em;
+    color: #ff0000;
+  }
+  
+  .notFoundLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .notFoundLink:hover {
+    background-color: #0056b3;
+  }
+  

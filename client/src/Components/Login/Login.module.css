@@ -1,0 +1,164 @@
+/* DoctorLogin.module.css */
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../assets/photo.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.loginFormContainer {
+  display: flex;
+  width: 900px;
+  height: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+  backdrop-filter: blur(10px); /* Adds background blur to enhance readability */
+  border-radius: 10px;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  border-radius: 10px 0 0 10px; /* Add rounded corners to match the container */
+}
+
+.right {
+  border-radius: 0 10px 10px 0; /* Add rounded corners to match the container */
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7); /* Semi-transparent border */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 5px;
+  color: #fff; /* White text color for better contrast */
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Semi-transparent placeholder color */
+}
+
+.greenBtn {
+  padding: 10px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.greenBtn:hover {
+  background-color: #218838;
+}
+
+.whiteBtn {
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.whiteBtn:hover {
+  background-color: #e6e6e6;
+}
+
+.googleBtn {
+  padding: 10px;
+  background: #db4437;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.googleBtn:hover {
+  background-color: #c23321;
+}
+
+.userTypeContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.userTypeBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 10px;
+  background: #f0f0f0;
+}
+
+.userTypeBtn.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.errorMsg {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownBtn {
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #007bff; /* Slightly transparent background */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1;
+}
